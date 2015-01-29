@@ -19,8 +19,8 @@ Amaze UI 代码片段。
 - **Sublime Text 2/3**：打开 `Preferences > Browse Packages`. 在 `Browse Packages` 下创建 AmazeUI 目录，把 dist 目录 sublime 内的文件复制创建好的 `AmazeUI` 目录下。
 
 - **JetBrains 系列编辑器（WebStorm 等）**：
-  - **方式一**：Mac 用户把下载解压得到的 AmazeUI.xml 拷贝到 `~/Library/Preferences/WebStorm9/templates` 目录下，重启编辑器（`WebStorm9` 为相应编辑器的名称和版本）；
-  - **方式二**：打开 `Preferences > Live Templates` 增加 AmazeUI 代码片段，把下载解压得到的 `AmazeUI.xml` 拷贝到 `Live Templates` 你自定义的代码片段下;
+  - **方式一**：**Mac** 把下载解压得到的 AmazeUI.xml 拷贝到 `~/Library/Preferences/WebStorm9/templates` 目录下，重启编辑器（`WebStorm9` 为相应编辑器的名称和版本）；**Windows**：`%USERPROFILE%/.WebStorm9/config/` 目录下；
+  - **方式二**：打开 `Preferences > Live Templates` 增加 AmazeUI 代码片段，把下载解压得到的 `AmazeUI.xml` 拷贝到 `Live Templates` 你自定义的代码片段下；
 
 ## CSS 代码片段目录
 
