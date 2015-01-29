@@ -7,7 +7,7 @@ Amaze UI 代码片段。
 
 ![snippets](snippets.gif)
 
-## 下载
+## 下载代码片段
 
 - [JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等）](http://amazeui.org/download?ver=jetbrains)
 - [Sublime Text](http://amazeui.org/download?ver=sublime)
@@ -16,7 +16,7 @@ Amaze UI 代码片段。
 
 - 现目前还没有添加到官方插件中使用如下：
 
-- **Sublime Text 2/3**：打开 `Preferences > Browse Packages`. 在 `Browse Packages` 下创建 AmazeUI 目录，把 dist 目录 sublime 内的文件复制创建好的 `AmazeUI` 目录下。
+- **Sublime Text 2/3**：打开 `Preferences > Browse Packages`，在 `Browse Packages` 下创建 AmazeUI 目录，把从上面下载的 Sublime 代码片段解压得到的文件复制创建好的 `AmazeUI` 目录下。
 
 - **JetBrains 系列编辑器（WebStorm 等）**：
   - **方式一**：**Mac** 把下载解压得到的 AmazeUI.xml 拷贝到 `~/Library/Preferences/WebStorm9/templates` 目录下，重启编辑器（`WebStorm9` 为相应编辑器的名称和版本）；**Windows**：`%USERPROFILE%/.WebStorm9/config/` 目录下；
