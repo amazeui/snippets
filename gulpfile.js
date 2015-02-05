@@ -96,6 +96,7 @@ function compileWebstorm() {
         regGt = />/mg,
         regQuo = /\"/mg,
         regAnd = /&/mg,
+        regNewLine = /\n/mg,
         regTab = /\$([^\$]+)\$/img;
 
     var snippet = value.data;
@@ -105,6 +106,7 @@ function compileWebstorm() {
     snippet = snippet.replace(regAnd, '&amp;');
     snippet = snippet.replace(regLt, '&lt;');
     snippet = snippet.replace(regGt, '&gt;');
+    snippet = snippet.replace(regNewLine, '&#10;');
     snippet = snippet.replace(regQuo, '&quot;');
 
     snippet = snippet.replace(regTab, function($0, $1) {
