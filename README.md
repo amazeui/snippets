@@ -22,6 +22,15 @@ Amaze UI 代码片段。
   - **方式一**：**Mac** 把下载解压得到的 AmazeUI.xml 拷贝到 `~/Library/Preferences/WebStorm9/templates` 目录下，重启编辑器（`WebStorm9` 为相应编辑器的名称和版本）；**Windows**：`%USERPROFILE%/.WebStorm9/config/` 目录下；
   - **方式二**：打开 `Preferences > Live Templates` 增加 AmazeUI 代码片段，把下载解压得到的 `AmazeUI.xml` 拷贝到 `Live Templates` 你自定义的代码片段下；
 
+
+### Sublime Text 安装 gif 图，windows 安装方法类似。
+
+![Sublime Text Installation](SublimeTextInstallation.gif)
+
+### WebStorm 安装 gif 图，windows 安装方法类似，需找到相应路径。
+
+![WebStorm Installation](WebStormInstallation.gif)
+
 ## CSS 代码片段目录
 
 ### CDN

@@ -9,7 +9,7 @@ var docUtil = require('amazeui-doc-util');
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
-var version = '2.1.0';
+var version = '2.2.1';
 
 // Handlebars Helper
 handlebars.registerHelper('ifCond', function(v1, operator, v2, options) {
