@@ -51,7 +51,8 @@
 <p>Amaze UI 代码片段。</p>
 <h2><a name="%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C"><span class="header-link"></span></a>使用效果</h2><p><img src="snippets.gif" alt="snippets"></p>
 <h2><a name="%E4%B8%8B%E8%BD%BD%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5" class="anchor" href="#%E4%B8%8B%E8%BD%BD%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5"><span class="header-link"></span></a>下载代码片段</h2><ul>
-<li><a href="http://amazeui.org/download?ver=jetbrains">JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等）</a></li>
+<li><a href="http://amazeui.org/download?ver=jetbrainsjar">JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等） 配置文件 <code>jar</code></a></li>
+<li><a href="http://amazeui.org/download?ver=jetbrains">JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等） XML 文件</a></li>
 <li><a href="http://amazeui.org/download?ver=sublime">Sublime Text</a></li>
 </ul>
 <h2><a name="%E5%AE%89%E8%A3%85" class="anchor" href="#%E5%AE%89%E8%A3%85"><span class="header-link"></span></a>安装</h2><ul>
@@ -61,8 +62,14 @@
 </li>
 <li><p><strong>JetBrains 系列编辑器（WebStorm 等）</strong>：</p>
 <ul>
-<li><strong>方式一</strong>：<strong>Mac</strong> 把下载解压得到的 AmazeUI.xml 拷贝到 <code>~/Library/Preferences/WebStorm9/templates</code> 目录下，重启编辑器（<code>WebStorm9</code> 为相应编辑器的名称和版本）；<strong>Windows</strong>：<code>%USERPROFILE%/.WebStorm9/config/</code> 目录下；</li>
-<li><strong>方式二</strong>：打开 <code>Preferences &gt; Live Templates</code> 增加 AmazeUI 代码片段，把下载解压得到的 <code>AmazeUI.xml</code> 拷贝到 <code>Live Templates</code> 你自定义的代码片段下；</li>
+<li><strong>方式一</strong>：下载 <code>jar</code> 文件（上面第一个链接），点击编辑器菜单 <code>File</code> -&gt; <code>Import Settings...</code>，选择刚才下载的 <code>jar</code>，点击 <code>OK</code>，导入代码片段完成。</li>
+<li><strong>方式二</strong>：把下载解压得到的 AmazeUI.xml 拷贝到 IDE 配置文件 <code>templates</code> 目录下（<strong>如果 <code>templates</code> 文件夹不存在，则需要手动创建</strong>），重启编辑器：</li>
+<li>Windows: <code>%USERPROFILE%/\.&lt;产品名称&gt;&lt;版本号&gt;\config\templates</code>，例如 WebStorm 9 的模板配置目录为 <code>%USERPROFILE%/.WebStorm9/config/templates</code></li>
+<li>Linux: <code>~\.&lt;产品名称&gt;&lt;版本号&gt;\config\templates</code></li>
+<li><p>OS X: <code>~/Library/Preferences/&lt;产品名称&gt;&lt;版本号&gt;/templates</code>，例如 WebStorm 10 的模板配置目录为 <code>~/Library/Preferences/WebStorm10/templates</code>； PHPStorm 9 的路径为 <code>~/Library/Preferences/WebIde90/templates</code></p>
+</li>
+<li><p><strong>方式三</strong>：打开 <code>Preferences &gt; Live Templates</code> 增加 AmazeUI 代码片段，把下载解压得到的 <code>AmazeUI.xml</code> 拷贝到 <code>Live Templates</code> 你自定义的代码片段下；</p>
+</li>
 </ul>
 </li>
 </ul>
