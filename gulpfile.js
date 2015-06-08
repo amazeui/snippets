@@ -46,7 +46,7 @@ var config = {
   },
   dist: {
     sublime: '/.build/sublime',
-    webstorm: '/.build/webstorm'
+    jetbrains: './jetbrains/templates'
   }
 };
 var prefixName = 'am-';
@@ -84,7 +84,7 @@ var jsData = compileHBS(data.jsTpl, data.jsConfig);
 function compileWebstorm() {
   var result = [];
   var fileName = 'AmazeUI.xml';
-  var dirPath = __dirname + config.dist.webstorm;
+  var dirPath = path.join(__dirname, config.dist.jetbrains);
 
   var data = cssData.concat(jsData);
 
@@ -92,11 +92,11 @@ function compileWebstorm() {
     var triggerName = value.triggerName;
 
     var regLt = /</mg,
-        regGt = />/mg,
-        regQuo = /\"/mg,
-        regAnd = /&/mg,
-        regNewLine = /\n/mg,
-        regTab = /\$([^\$]+)\$/img;
+      regGt = />/mg,
+      regQuo = /\"/mg,
+      regAnd = /&/mg,
+      regNewLine = /\n/mg,
+      regTab = /\$([^\$]+)\$/img;
 
     var snippet = value.data;
     var arrNum = snippet.match(regTab);
@@ -111,14 +111,14 @@ function compileWebstorm() {
     snippet = snippet.replace(regTab, function($0, $1) {
       var num = _.indexOf(arrNum, $0) + 1;
       var varName = 'var' + num;
-      tabVariable.push('    <variable name="'+ varName +'" expression="&quot;'+ $1 +'&quot;" defaultValue="" alwaysStopAt="true" />');
+      tabVariable.push('    <variable name="' + varName + '" expression="&quot;' + $1 + '&quot;" defaultValue="" alwaysStopAt="true" />');
       return $1 = '$' + varName + '$';
     });
 
     snippet = snippet.trim();
 
     var liveTpl = [
-      '  <template name="'+ triggerName +'" value="'+ snippet +'" toReformat="true" toShortenFQNames="true">\n',
+      '  <template name="' + triggerName + '" value="' + snippet + '" toReformat="true" toShortenFQNames="true">\n',
       tabVariable.join(''),
       '    <context>',
       '      <option name="HTML_TEXT" value="true" />',
@@ -166,7 +166,7 @@ function compileSublime(data) {
 
     snippet = snippet.replace(regTab, function($0, $1) {
       var num = _.indexOf(arr, $0) + 1;
-      return '${'+ num + ':' + $1 + '}';
+      return '${' + num + ':' + $1 + '}';
     });
 
     snippet = snippet.trim();
@@ -178,7 +178,7 @@ function compileSublime(data) {
       snippet,
       ']]>',
       '  </content>',
-      '  <tabTrigger>'+ value.triggerName +'</tabTrigger>',
+      '  <tabTrigger>' + value.triggerName + '</tabTrigger>',
       '</snippet>'
     ].join('\n');
 
@@ -195,11 +195,11 @@ function compileSublime(data) {
  * @param mode
  * @returns {boolean}
  */
-function mkdirsSync(dirname, mode){
-  if(fs.existsSync(dirname)){
+function mkdirsSync(dirname, mode) {
+  if (fs.existsSync(dirname)) {
     return true;
-  }else{
-    if(mkdirsSync(path.dirname(dirname), mode)){
+  } else {
+    if (mkdirsSync(path.dirname(dirname), mode)) {
       fs.mkdirSync(dirname, mode);
       return true;
     }
@@ -224,12 +224,12 @@ function compileHBS(tpl, config) {
         _.each(data, function(v) {
           triggerName = prefixName + list.name + ':' + v;
           result.push(
-              {
-                name: list.name,
-                fileName: v,
-                triggerName: triggerName,
-                data: template({className: v})
-              }
+            {
+              name: list.name,
+              fileName: v,
+              triggerName: triggerName,
+              data: template({className: v})
+            }
           )
         })
 
@@ -237,12 +237,12 @@ function compileHBS(tpl, config) {
 
         triggerName = prefixName + list.name;
         result.push(
-            {
-              name: list.name,
-              fileName: '',
-              triggerName: triggerName,
-              data: template({})
-            }
+          {
+            name: list.name,
+            fileName: '',
+            triggerName: triggerName,
+            data: template({})
+          }
         )
 
       }
@@ -266,47 +266,53 @@ gulp.task('build', function() {
 
 gulp.task('copy:img', function() {
   return gulp.src(['*.gif', '*.png', '*.jpg'])
-      .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'))
 });
 
-gulp.task('docs', function(){
+gulp.task('docs', function() {
   return gulp.src('README.md')
-      .pipe(markJSON(docUtil.markedOptions))
-      .pipe(docUtil.applyTemplate(null, {
-        pluginTitle: 'Amaze UI Snippets',
-        pluginDesc: 'Amaze UI 代码片段，快速编写基于Amaze UI的网站...',
-        buttons: 'amazeui/snippets'
-      }))
-      .pipe($.rename(function(file) {
-        file.basename = file.basename.toLowerCase();
-        if (file.basename === 'readme') {
-          file.basename = 'index';
-        }
-        file.extname = '.html';
-      }))
-      .pipe(gulp.dest(function(file) {
-        if (file.relative === 'index.html') {
-          return 'dist'
-        }
-        return 'dist/docs';
-      }));
+    .pipe(markJSON(docUtil.markedOptions))
+    .pipe(docUtil.applyTemplate(null, {
+      pluginTitle: 'Amaze UI Snippets',
+      pluginDesc: 'Amaze UI 代码片段，快速编写基于Amaze UI的网站...',
+      buttons: 'amazeui/snippets'
+    }))
+    .pipe($.rename(function(file) {
+      file.basename = file.basename.toLowerCase();
+      if (file.basename === 'readme') {
+        file.basename = 'index';
+      }
+      file.extname = '.html';
+    }))
+    .pipe(gulp.dest(function(file) {
+      if (file.relative === 'index.html') {
+        return 'dist'
+      }
+      return 'dist/docs';
+    }));
 });
 
-gulp.task('zip:webstorm', ['build'], function() {
-  return gulp.src('.build/webstorm/*')
-      .pipe($.zip('JetBrains.zip'))
-      .pipe(gulp.dest('dist'))
+gulp.task('zip:jar', ['build'], function() {
+  return gulp.src('./jetbrains/**/*')
+    .pipe($.zip('jetbrains.jar'))
+    .pipe(gulp.dest('dist'))
+});
+
+gulp.task('zip:jetbrains', ['build'], function() {
+  return gulp.src('./jetbrains/templates/*')
+    .pipe($.zip('JetBrains.zip'))
+    .pipe(gulp.dest('dist'))
 });
 
 gulp.task('zip:sublime', ['build'], function() {
   return gulp.src('.build/sublime/**/*')
-      .pipe($.zip('SublimeText.zip'))
-      .pipe(gulp.dest('dist'))
+    .pipe($.zip('SublimeText.zip'))
+    .pipe(gulp.dest('dist'))
 });
 
-gulp.task('deploy', ['default'], function () {
+gulp.task('deploy', ['default'], function() {
   return gulp.src('dist/*')
-      .pipe($.ghPages());
+    .pipe($.ghPages());
 });
 
-gulp.task('default', ['docs', 'build', 'zip:webstorm', 'zip:sublime', 'copy:img']);
+gulp.task('default', ['docs', 'build', 'zip:jetbrains', 'zip:jar', 'zip:sublime', 'copy:img']);

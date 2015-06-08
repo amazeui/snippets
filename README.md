@@ -9,7 +9,8 @@ Amaze UI 代码片段。
 
 ## 下载代码片段
 
-- [JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等）](http://amazeui.org/download?ver=jetbrains)
+- [JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等） 配置文件 `jar`](http://amazeui.org/download?ver=jetbrainsjar)
+- [JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等） XML 文件](http://amazeui.org/download?ver=jetbrains)
 - [Sublime Text](http://amazeui.org/download?ver=sublime)
 
 ## 安装
@@ -19,12 +20,13 @@ Amaze UI 代码片段。
 - **Sublime Text 2/3**：打开 `Preferences > Browse Packages`，在 `Browse Packages` 下创建 AmazeUI 目录，把从上面下载的 Sublime 代码片段解压得到的文件复制创建好的 `AmazeUI` 目录下。
 
 - **JetBrains 系列编辑器（WebStorm 等）**：
-  - **方式一**：把下载解压得到的 AmazeUI.xml 拷贝到 IDE 配置文件 `templates` 目录下（**如果 `templates` 文件夹不存在，则需要手动创建**），重启编辑器：
+  - **方式一**：下载 `jar` 文件（上面第一个链接），点击编辑器菜单 `File` -> `Import Settings...`，选择刚才下载的 `jar`，点击 `OK`，编辑器会提示重启，重启以后导入完成。
+  - **方式二**：把下载解压得到的 AmazeUI.xml 拷贝到 IDE 配置文件 `templates` 目录下（**如果 `templates` 文件夹不存在，则需要手动创建**），重启编辑器：
     - Windows: `%USERPROFILE%/\.<产品名称><版本号>\config\templates`，例如 WebStorm 9 的模板配置目录为 `%USERPROFILE%/.WebStorm9/config/templates`
     - Linux: `~\.<产品名称><版本号>\config\templates`
-    - OS X: `~/Library/Preferences/<产品名称><版本号>/templates`，例如 WebStorm 10 的模板配置目录为 `~/Library/Preferences/WebStorm10/templates`
+    - OS X: `~/Library/Preferences/<产品名称><版本号>/templates`，例如 WebStorm 10 的模板配置目录为 `~/Library/Preferences/WebStorm10/templates`； PHPStorm 9 的路径为 `~/Library/Preferences/WebIde90/templates`
 
-  - **方式二**：打开 `Preferences > Live Templates` 增加 AmazeUI 代码片段，把下载解压得到的 `AmazeUI.xml` 拷贝到 `Live Templates` 你自定义的代码片段下；
+  - **方式三**：打开 `Preferences > Live Templates` 增加 AmazeUI 代码片段，把下载解压得到的 `AmazeUI.xml` 拷贝到 `Live Templates` 你自定义的代码片段下；
 
 
 ### Sublime Text 安装 gif 图，windows 安装方法类似。
