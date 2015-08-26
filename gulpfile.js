@@ -121,8 +121,9 @@ function compileWebstorm() {
       '  <template name="' + triggerName + '" value="' + snippet + '" toReformat="true" toShortenFQNames="true">\n',
       tabVariable.join(''),
       '    <context>',
-      '      <option name="HTML_TEXT" value="true" />',
-      '      <option name="HTML" value="true" />',
+      '      <option name="XSL_TEXT" value="true" />',
+      '      <option name="XML_TEXT" value="true" />',
+      '      <option name="XML" value="true" />',
       '    </context>',
       '  </template>'
     ].join('\n');
