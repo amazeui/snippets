@@ -1,0 +1,8 @@
+<snippet>
+  <content>
+<![CDATA[
+<div class="am-animation-slide-left${1: am-animation-reverse}">slide-left</div>
+]]>
+  </content>
+  <tabTrigger>am-动画:左侧滑入</tabTrigger>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+  <content>
+<![CDATA[
+<pre class="am-pre-scrollable">
+	<code>
+		${1:code}
+	</code>
+</pre>
+]]>
+  </content>
+  <tabTrigger>am-代码:代码块高度</tabTrigger>
+</snippet>

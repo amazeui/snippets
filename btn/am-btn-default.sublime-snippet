@@ -1,0 +1,8 @@
+<snippet>
+  <content>
+<![CDATA[
+<button type="button" class="am-btn am-btn-default am-btn-default">${1:按钮}</button>
+]]>
+  </content>
+  <tabTrigger>am-按钮:默认</tabTrigger>
+</snippet>

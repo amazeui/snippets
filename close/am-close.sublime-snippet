@@ -1,0 +1,8 @@
+<snippet>
+  <content>
+<![CDATA[
+<button type="button" class="am-close">&times;</button>
+]]>
+  </content>
+  <tabTrigger>am-关闭按钮</tabTrigger>
+</snippet>

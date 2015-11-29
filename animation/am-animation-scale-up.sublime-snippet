@@ -1,0 +1,8 @@
+<snippet>
+  <content>
+<![CDATA[
+<div class="am-animation-scale-up${1: am-animation-reverse}">scale-up</div>
+]]>
+  </content>
+  <tabTrigger>am-动画:逐渐放大</tabTrigger>
+</snippet>

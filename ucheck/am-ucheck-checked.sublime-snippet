@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+<![CDATA[
+<label class="am-checkbox">
+  <input type="${1:checkbox}" value="" data-am-ucheck checked> ${2:checked}
+</label>
+]]>
+  </content>
+  <tabTrigger>am-单多选框:选中</tabTrigger>
+</snippet>

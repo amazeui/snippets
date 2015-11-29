@@ -1,0 +1,8 @@
+<snippet>
+  <content>
+<![CDATA[
+<img class="am-round" alt="" src="${1:图片地址}" width="" height="" />
+]]>
+  </content>
+  <tabTrigger>am-图片:椭圆</tabTrigger>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+  <content>
+<![CDATA[
+<div class="am-animation-shake${1: am-animation-reverse}">shake</div>
+]]>
+  </content>
+  <tabTrigger>am-动画:左右摇动</tabTrigger>
+</snippet>

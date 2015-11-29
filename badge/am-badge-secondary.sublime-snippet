@@ -1,0 +1,8 @@
+<snippet>
+  <content>
+<![CDATA[
+<span class="am-badge am-badge-secondary">${1:小徽章}</span>
+]]>
+  </content>
+  <tabTrigger>am-小微章:次色</tabTrigger>
+</snippet>
