@@ -13,3 +13,5 @@
 nodemon.json
 composer.json
 bower.json
+
+.publish

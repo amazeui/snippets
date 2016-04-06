@@ -12,12 +12,19 @@ Amaze UI 代码片段。
 - [JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等） 配置文件 `jar`](http://amazeui.org/download?ver=jetbrainsjar)
 - [JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等） XML 文件](http://amazeui.org/download?ver=jetbrains)
 - [Sublime Text](http://amazeui.org/download?ver=sublime)
+- [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=minwe.amazeui-vscode-snippets)
 
 ## 安装
 
-- 现目前还没有添加到官方插件中使用如下：
-
 - **Sublime Text 2/3**：打开 `Preferences > Browse Packages`，在 `Browse Packages` 下创建 AmazeUI 目录，把从上面下载的 Sublime 代码片段解压得到的文件复制创建好的 `AmazeUI` 目录下。
+
+- **Visual Studio Code**：
+
+  `⌘ + P` 然后输入：
+  ```
+  ext install amazeui-vscode-snippets
+  ```
+  更多细节参见[官方文档](https://code.visualstudio.com/docs/editor/extension-gallery)。
 
 - **JetBrains 系列编辑器（WebStorm 等）**：
   - **方式一**：下载 `jar` 文件（上面第一个链接），点击编辑器菜单 `File` -> `Import Settings...`，选择刚才下载的 `jar`，点击 `OK`，编辑器会提示重启，重启以后导入完成。
