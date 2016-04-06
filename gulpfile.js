@@ -1,9 +1,8 @@
 'use strict';
 
-var handlebars = require('handlebars');
-var _ = require('underscore');
 var fs = require('fs');
 var path = require('path');
+var handlebars = require('handlebars');
 var markJSON = require('markit-json');
 var docUtil = require('amazeui-doc-util');
 var gulp = require('gulp');
@@ -60,12 +59,12 @@ var data = (function readData() {
   var jsTpl = [];
   var jsConfig = [];
 
-  _.each(cssFiles, function(data) {
+  cssFiles.forEach(function(data) {
     cssTpl.push(fs.readFileSync(path.join(config.path.css, data, 'tpl.hbs'), fsOptions));
     cssConfig.push(require('./' + path.join(config.path.css, data, 'config.js')));
   });
 
-  _.each(jsFiles, function(data) {
+  jsFiles.forEach(function(data) {
     jsTpl.push(fs.readFileSync(path.join(config.path.js, data, 'tpl.hbs'), fsOptions));
     jsConfig.push(require('./' + path.join(config.path.js, data, 'config.js')));
   });
@@ -88,7 +87,7 @@ function compileWebstorm() {
 
   var data = cssData.concat(jsData);
 
-  _.each(data, function(value) {
+  data.forEach(function(value) {
     var triggerName = value.triggerName;
 
     var regLt = /</mg,
@@ -109,7 +108,7 @@ function compileWebstorm() {
     snippet = snippet.replace(regQuo, '&quot;');
 
     snippet = snippet.replace(regTab, function($0, $1) {
-      var num = _.indexOf(arrNum, $0) + 1;
+      var num = arrNum.indexOf($0) + 1;
       var varName = 'var' + num;
       tabVariable.push('    <variable name="' + varName + '" expression="&quot;' + $1 + '&quot;" defaultValue="" alwaysStopAt="true" />');
       return $1 = '$' + varName + '$';
@@ -150,7 +149,7 @@ function compileWebstorm() {
  * @param data
  */
 function compileSublime(data) {
-  _.each(data, function(value) {
+  data.forEach(function(value) {
     var dirPath = __dirname + config.dist.sublime;
     var dirName = dirPath + '/' + value.name;
     var fileName = dirName + '/' + prefixName + value.name;
@@ -166,7 +165,7 @@ function compileSublime(data) {
     }
 
     snippet = snippet.replace(regTab, function($0, $1) {
-      var num = _.indexOf(arr, $0) + 1;
+      var num = arr.indexOf($0) + 1;
       return '${' + num + ':' + $1 + '}';
     });
 
@@ -214,41 +213,37 @@ function mkdirsSync(dirname, mode) {
  */
 function compileHBS(tpl, config) {
   var result = [];
-  _.each(config, function(value, index) {
+  config.forEach(function(value, index) {
     var template = handlebars.compile(tpl[index]);
 
-    _.each(value, function(data, key, list) {
+    Object.keys(value).forEach(function(key) {
+      var data = value[key];
       var triggerName;
 
-      if (_.isArray(data)) {
-
-        _.each(data, function(v) {
-          triggerName = prefixName + list.name + ':' + v;
+      if (Array.isArray(data)) {
+        data.forEach(function(v) {
+          triggerName = prefixName + value.name + ':' + v;
           result.push(
             {
-              name: list.name,
+              name: value.name,
               fileName: v,
               triggerName: triggerName,
               data: template({className: v})
             }
           )
         })
-
       } else {
-
-        triggerName = prefixName + list.name;
+        triggerName = prefixName + value.name;
         result.push(
           {
-            name: list.name,
+            name: value.name,
             fileName: '',
             triggerName: triggerName,
             data: template({})
           }
-        )
-
+        );
       }
     });
-
   });
 
   return result;
@@ -314,12 +309,6 @@ gulp.task('zip:sublime', ['build'], function() {
 gulp.task('deploy', ['default'], function() {
   return gulp.src('dist/*')
     .pipe($.ghPages());
-});
-var concat = require('gulp-concat');
-gulp.task('concat', function() {
-  return gulp.src('atom/**/*.cson')
-    .pipe(concat('amazeui.cson'))
-    .pipe(gulp.dest('./'));
 });
 
 gulp.task('default', ['docs', 'build', 'zip:jetbrains', 'zip:jar', 'zip:sublime', 'copy:img']);

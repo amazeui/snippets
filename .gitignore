@@ -32,6 +32,7 @@ node_modules
 # build
 dist
 .build
+.publish
 
 # zip files
 vendor
