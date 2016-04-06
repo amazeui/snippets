@@ -315,5 +315,11 @@ gulp.task('deploy', ['default'], function() {
   return gulp.src('dist/*')
     .pipe($.ghPages());
 });
+var concat = require('gulp-concat');
+gulp.task('concat', function() {
+  return gulp.src('atom/**/*.cson')
+    .pipe(concat('amazeui.cson'))
+    .pipe(gulp.dest('./'));
+});
 
 gulp.task('default', ['docs', 'build', 'zip:jetbrains', 'zip:jar', 'zip:sublime', 'copy:img']);
