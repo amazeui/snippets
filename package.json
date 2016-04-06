@@ -1,6 +1,6 @@
 {
   "name": "amazeui-snippets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Amaze UI template snippets for IDE.",
   "main": "index.js",
   "scripts": {
@@ -16,23 +16,23 @@
     "WebStorm"
   ],
   "author": "Amaze UI Team",
-  "license": "CC0 1.0 Universal",
+  "license": "CC BY 4.0",
   "bugs": {
     "url": "https://github.com/amazeui/snippets/issues"
   },
   "homepage": "https://github.com/amazeui/snippets",
   "devDependencies": {
-    "underscore": "^1.7.0",
-    "gulp": "^3.8.10",
-    "gulp-gh-pages": "^0.4.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-zip": "^2.0.2",
-    "gulp-load-plugins": "^0.8.0",
-    "gulp-util": "^2.2.14",
+    "amazeui-doc-util": "^0.4.0",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.7",
+    "gulp-zip": "^3.2.0",
     "markit-json": "^0.2.1",
-    "amazeui-doc-util": "^0.1.0"
+    "underscore": "^1.8.3"
   },
   "dependencies": {
-    "handlebars": "^2.0.0"
+    "handlebars": "^4.0.5"
   }
 }
