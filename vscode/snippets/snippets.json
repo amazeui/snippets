@@ -877,13 +877,13 @@
 	},
 	"am-progress:sm": {
 		"prefix": "am-progress:sm",
-		"body": "\n\n<div class=\"am-progress am-progress-bar-sm\">\n  <div class=\"am-progress-bar\" style=\"${1:width: 15%}\"></div>\n</div>\n\n  ",
+		"body": "\n\n<div class=\"am-progress am-progress-sm\">\n  <div class=\"am-progress-bar\" style=\"${1:width: 15%}\"></div>\n</div>\n\n  ",
 		"description": "",
 		"scope": ""
 	},
 	"am-progress:striped": {
 		"prefix": "am-progress:striped",
-		"body": "\n\n<div class=\"am-progress am-progress-bar-striped\">\n  <div class=\"am-progress-bar\" style=\"${1:width: 15%}\"></div>\n</div>\n\n  ",
+		"body": "\n\n<div class=\"am-progress am-progress-striped\">\n  <div class=\"am-progress-bar\" style=\"${1:width: 15%}\"></div>\n</div>\n\n  ",
 		"description": "",
 		"scope": ""
 	},
@@ -901,7 +901,7 @@
 	},
 	"am-progress:xs": {
 		"prefix": "am-progress:xs",
-		"body": "\n\n<div class=\"am-progress am-progress-bar-xs\">\n  <div class=\"am-progress-bar\" style=\"${1:width: 15%}\"></div>\n</div>\n\n  ",
+		"body": "\n\n<div class=\"am-progress am-progress-xs\">\n  <div class=\"am-progress-bar\" style=\"${1:width: 15%}\"></div>\n</div>\n\n  ",
 		"description": "",
 		"scope": ""
 	},

@@ -1,13 +1,11 @@
-# README
-## This is the README for your extension "amazeui-vscode-snippets"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# amazeui-vscode-snippets
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+[Amaze UI](https://github.com/amazeui/amazeui) snippets for VSCode.
 
 ### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+
+* [GitHub](https://github.com/amazeui/snippets)
+* [Dev Document](https://code.visualstudio.com/docs/extensions/example-hello-world)
+* [vsce - Publishing Tool Reference](https://code.visualstudio.com/docs/tools/vscecli)
 
 **Enjoy!**

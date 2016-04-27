@@ -297,19 +297,19 @@ gulp.task('docs', function() {
 gulp.task('zip:jar', ['build'], function() {
   return gulp.src('./jetbrains/**/*')
     .pipe($.zip('jetbrains.jar'))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('zip:jetbrains', ['build'], function() {
   return gulp.src('./jetbrains/templates/*')
     .pipe($.zip('JetBrains.zip'))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('zip:sublime', ['build'], function() {
   return gulp.src('.build/sublime/**/*')
     .pipe($.zip('SublimeText.zip'))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('deploy', ['default'], function() {

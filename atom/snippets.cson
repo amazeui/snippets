@@ -440,10 +440,10 @@
     'body': '<div class="am-progress">\n  <div class="am-progress-bar am-progress-bar-secondary" style="${1:width: 15%}"></div>\n</div>'
   'am-progress-sm':
     'prefix': 'am-progress:sm'
-    'body': '<div class="am-progress am-progress-bar-sm">\n  <div class="am-progress-bar" style="${1:width: 15%}"></div>\n</div>'
+    'body': '<div class="am-progress am-progress-sm">\n  <div class="am-progress-bar" style="${1:width: 15%}"></div>\n</div>'
   'am-progress-striped':
     'prefix': 'am-progress:striped'
-    'body': '<div class="am-progress am-progress-bar-striped">\n  <div class="am-progress-bar" style="${1:width: 15%}"></div>\n</div>'
+    'body': '<div class="am-progress am-progress-striped">\n  <div class="am-progress-bar" style="${1:width: 15%}"></div>\n</div>'
   'am-progress-success':
     'prefix': 'am-progress:success'
     'body': '<div class="am-progress">\n  <div class="am-progress-bar am-progress-bar-success" style="${1:width: 15%}"></div>\n</div>'
@@ -452,7 +452,7 @@
     'body': '<div class="am-progress">\n  <div class="am-progress-bar am-progress-bar-warning" style="${1:width: 15%}"></div>\n</div>'
   'am-progress-xs':
     'prefix': 'am-progress:xs'
-    'body': '<div class="am-progress am-progress-bar-xs">\n  <div class="am-progress-bar" style="${1:width: 15%}"></div>\n</div>'
+    'body': '<div class="am-progress am-progress-xs">\n  <div class="am-progress-bar" style="${1:width: 15%}"></div>\n</div>'
   'am-progress':
     'prefix': 'am-progress'
     'body': '<div class="am-progress">\n  <div class="am-progress-bar" style="width: ${1:40%}">40%</div>\n</div>'
